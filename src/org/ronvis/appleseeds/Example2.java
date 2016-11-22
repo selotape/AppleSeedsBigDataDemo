@@ -18,7 +18,7 @@ public class Example2 {
 		String filesDir = args[0];
 		int numOfThreads = Integer.parseInt(args[1]);
 
-		System.out.println("Executing Example2 with " + numOfThreads + " threads...");
+		System.out.println("Executing Example2 with " + numOfThreads + " threads:");
 		LocalDateTime startTime = LocalDateTime.now();
 
 		File directory = new File(filesDir);
@@ -46,6 +46,7 @@ public class Example2 {
 
 
 		LocalDateTime endTime = LocalDateTime.now();
+		System.out.println();
 		System.out.println("Word Count:  \t" + totalCount);
 		System.out.println("Elapsed Time:\t" + Duration.between(startTime, endTime).toMillis());
 	}

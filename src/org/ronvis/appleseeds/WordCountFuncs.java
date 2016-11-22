@@ -8,12 +8,12 @@ import java.util.List;
 
 public class WordCountFuncs {
 
-	private static int SLEEP_MILLIS = 1 ;
+	private static int SLEEP_MILLIS = 1;
 	
 	public static int wordCount(File file) {
 		
 		int count = 0;
-		System.out.println(">>Counting file \"" + file.getName() + "\"");
+//		System.out.println(">>Counting file \"" + file.getName() + "\"");
 		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
