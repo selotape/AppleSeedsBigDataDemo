@@ -3,5 +3,5 @@
 	<img src="./images/appleseeds.jpg" width="100">
 </a>
 <a href="http://taglitww.birthrightisrael.com/">
-	<img src="./images/./images/birthright-logo.jpg" width="100">
+	<img src="./images/birthright-logo.jpg" width="100">
 </a>
