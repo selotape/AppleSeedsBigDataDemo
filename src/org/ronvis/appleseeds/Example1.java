@@ -12,11 +12,12 @@ public class Example1 {
 
 		int totalCount = 0;
 		int filesCounted = 0;
-		System.out.println("Executing Example1:");
+		File directory = new File(args[0]);
 		LocalDateTime startTime = LocalDateTime.now();
+		
+		System.out.println("Executing Example1.");
+		System.out.println("Counting words in directory \"" + args[0] + "\"");
 	    
-		String filesDir = args[0];
-		File directory = new File(filesDir);
 		
 		for (File file : directory.listFiles()) {
 			totalCount += wordCount(file); 
@@ -25,7 +26,8 @@ public class Example1 {
 		System.out.println();
 		LocalDateTime endTime = LocalDateTime.now();
 		System.out.println("Word Count:  \t" + totalCount);
-		System.out.println("Elapsed Time:\t" + Duration.between(startTime, endTime).toMillis());
+		float elapsedTimeInSeconds =  (float) ((float)Duration.between(startTime, endTime).toMillis()/1000.0);
+		System.out.println("Elapsed Time:\t" + elapsedTimeInSeconds);
 
 	}
 }

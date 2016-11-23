@@ -15,13 +15,12 @@ public class Example2 {
 
 		int totalCount = 0;
 		List<WordCounterThread> threads = new ArrayList<WordCounterThread>();
-		String filesDir = args[0];
+		File directory = new File(args[0]);
 		int numOfThreads = Integer.parseInt(args[1]);
-
-		System.out.println("Executing Example2 with " + numOfThreads + " threads:");
 		LocalDateTime startTime = LocalDateTime.now();
 
-		File directory = new File(filesDir);
+		System.out.println("Executing Example2 with " + numOfThreads + " threads:");
+
 		List<List<File>> choppedFiles = chopped(Arrays.asList(directory.listFiles()), numOfThreads);
 		
 		for (List<File> filesToProcess : choppedFiles) {
@@ -48,6 +47,7 @@ public class Example2 {
 		LocalDateTime endTime = LocalDateTime.now();
 		System.out.println();
 		System.out.println("Word Count:  \t" + totalCount);
-		System.out.println("Elapsed Time:\t" + Duration.between(startTime, endTime).toMillis());
+		float elapsedTimeInSeconds =  (float) ((float)Duration.between(startTime, endTime).toMillis()/1000.0);
+		System.out.println("Elapsed Time:\t" + elapsedTimeInSeconds);
 	}
 }
