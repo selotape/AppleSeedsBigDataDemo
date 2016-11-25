@@ -22,7 +22,7 @@ public class Example2 {
 		System.out.println("Executing Example2 with " + numOfThreads + " threads:");
 
 		List<List<File>> choppedFiles = chopped(Arrays.asList(directory.listFiles()), numOfThreads);
-		
+
 		for (List<File> filesToProcess : choppedFiles) {
 			WordCounterThread thread = new WordCounterThread(filesToProcess);
 			threads.add(thread);
@@ -33,11 +33,7 @@ public class Example2 {
 			}
 			for (WordCounterThread thread : threads) {
 				thread.join();
-			}
-			for (WordCounterThread thread : threads) {
-				if (thread.resultIsReady) {
-					totalCount += thread.result;
-				}
+				totalCount += thread.result;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

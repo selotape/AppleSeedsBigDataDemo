@@ -8,7 +8,8 @@ import java.util.List;
 
 public class WordCountFuncs {
 
-	private static int SLEEP_MILLIS = 1;
+	public static final int SLEEP_BETWEEN_LINES = 0;
+	public static final int SLEEP_BETWEEN_FILES = 10;
 	
 	public static int wordCount(File file) {
 		
@@ -21,13 +22,14 @@ public class WordCountFuncs {
 			while ((line = br.readLine()) != null) {
 				String[] words = line.split("\\s");
 				count += words.length;
-				Thread.sleep(SLEEP_MILLIS);
+				Thread.sleep(SLEEP_BETWEEN_LINES);
 			}
 			br.close();
+			Thread.sleep(SLEEP_BETWEEN_FILES);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-				
+		
 		return count;
 	}
 
